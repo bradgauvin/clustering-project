@@ -59,39 +59,30 @@
 ## Data Dictionary
 <hr style="background-color:silver;height:3px;" />
 
-|Variable|	Meaning|
-|:-------|:----------|
-|bedroom|	number of bedrooms in home|
-|bathroom|number of bathrooms in home|
-|bathroom_bin|	number of bathrooms split into 3 categories|
-|bedroom_bin|	number of bedrooms split into 3 categories|
-|age|	age of the home|
-|square_feet|	total living area of home|
-|tax_value|	total tax assessed value of the parcel (target)|
-|fips|	Federal Information Processing Standard code (location)|
-|bed_bath_ratio|	ratio of bedrooms to bathrooms|
-|living_space|	square footage - (bathrooms40 + bedrooms200)|
-|longitude|longidudinal coordinates|
-|latitude| latitudinal coordinates|
-|room_count|	sum of bedrooms and bathrooms|
-|pool|	whether the home has a pool|
-|has_garage|	whether the home has a garage|
-|condition|	assessment of the condition of the home, low values are better|
-|heatingorsystemdesc|	heating system|
-|fullbathcnt_bin|	binned count of full bathrooms|
-|home_size|	size of home binned|
-|tax_rate|	tax amount/ tax value|
-|structure_dollar_per_sqft|	tax value / square footage|
-|land_dollar_per_sqft	land| tax value / square footage|
-|abs_logerror|	absolute value of prediction log error|
-|tax_value_bin|	binned tax values|
-|lot_size_bin|	binned lot sizes|
-|structure_value_bin|	structure dollar per sqft binned|
-|land_value_bin|	land value binned|
-|taxdelinquencyflag|	home is delinquent on taxes|
-|delinquent_years|	years delinquent|
+| Variable                       | Definition                                         | Data Type |
+|:-------------------------------|:--------------------------------------------------:|:---------:|
+| acres                          | grouped bins, based upon lot square footage        | category  |
+| age                            | grouped bins, based upon year built.               | category  |
+| assessed_value                 | total tax assessed value of the property           | float64   |
+| bathroom_bins                  | grouped bins, based upon number of bedrooms        | category  |
+| bathrooms                      | number of bathrooms and half-bathrooms in home     | float64   |
+| bedroom_bins                   | grouped bins, based upon number of bedrooms        | category  |
+| bedrooms                       | number of bedrooms in the home                     | float64   |
+| county_code_bin                | name of county as assigned by state_county_code    | category  |
+| county_code_bin_Orange County  | numeric variable representing county_code_bin      | uint8     |
+| county_code_bin_Ventura County | numeric variable representing county_code_bin      | uint8     |
+| latitude                       | Latitude of the middle of the parcel multiplied by 10e6  | category  |
+| logerror                       | Residual Error in Home Valuation                   | float64   |
+| longitude                      | Longitude of the middle of the parcel multiplied by 10e6 | category  |
+| home_sizes                     | grouped bins, based upon square footage            | category  |
+| square_feet                    | total finished living area of the home             | float64   |
+| state_county_code              | federal information processing standards code      | object    |
+| total_rooms                    | combined number of bedrooms and bathrooms          | float64   |
+| year_built                     | year the primary residence was constructed         | int64     |
 
-
+|Target Variable                 | Definition                                         | Data Type|
+|:-------------------------------|:--------------------------------------------------:|:---------:|
+|logerror                        | Residual Error in Home Valuation                   |           |
 <hr style="background-color:silver;height:3px;" />
 
 ## Reproducing this project
